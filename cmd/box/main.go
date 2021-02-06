@@ -27,7 +27,7 @@ func main() {
 		appIDList = append(appIDList, uint32(appid))
 	}
 
-	ghToken := "9dc14674f9ccb2206eda4ad9619c9193b37ce784"
+	ghToken := os.Getenv("GH_TOKEN_STEAM")
 	ghUsername := "cyf-gh"
 	gistID := "ef193438e465860af6aea1a3da16f0cf"
 
