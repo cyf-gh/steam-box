@@ -14,9 +14,9 @@ import (
 
 func main() {
 	var err error
-	steamAPIKey := os.Getenv("STEAM_API_KEY")
-	steamID, _ := strconv.ParseUint(os.Getenv("STEAM_ID"), 10, 64)
-	appIDs := os.Getenv("APP_ID")
+	steamAPIKey := "74140FA9101446B6B9C2559CBF73A3CA"
+	var steamID uint64 = 76561198120081590
+	appIDs := ""
 	appIDList := make([]uint32, 0)
 
 	for _, appID := range strings.Split(appIDs, ",") {
@@ -27,11 +27,11 @@ func main() {
 		appIDList = append(appIDList, uint32(appid))
 	}
 
-	ghToken := os.Getenv("GH_TOKEN")
-	ghUsername := os.Getenv("GH_USER")
-	gistID := os.Getenv("GIST_ID")
+	ghToken := "a3a7fc4b52232a65f6c3162247bfc6698ab3ac34"
+	ghUsername := "cyf-gh"
+	gistID := "ef193438e465860af6aea1a3da16f0cf"
 
-	steamOption := "ALLTIME" // options for types of games to list: RECENT (recently played games), ALLTIME <default> (playtime of games in descending order)
+	steamOption := "RECENT" // options for types of games to list: RECENT (recently played games), ALLTIME <default> (playtime of games in descending order)
 	if os.Getenv("STEAM_OPTION") != "" {
 		steamOption = os.Getenv("STEAM_OPTION")
 	}
@@ -44,7 +44,10 @@ func main() {
 		}
 	}
 	
-	updateOption := os.Getenv("UPDATE_OPTION") // options for update: GIST (Gist only), MARKDOWN (README only), GIST_AND_MARKDOWN (Gist and README)
+//	updateOption := os.Getenv("UPDATE_OPTION") // options for update: GIST (Gist only), MARKDOWN (README only), GIST_AND_MARKDOWN (Gist and README)
+	updateOption := "GIST_AND_MARKDOWN" // options for update: GIST (Gist only), MARKDOWN (README only), GIST_AND_MARKDOWN (Gist and README)
+
+
 	markdownFile := os.Getenv("MARKDOWN_FILE") // the markdown filename (e.g. MYFILE.md)
 
 	var updateGist, updateMarkdown bool
