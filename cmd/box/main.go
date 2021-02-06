@@ -27,7 +27,7 @@ func main() {
 		appIDList = append(appIDList, uint32(appid))
 	}
 
-	ghToken := "a3a7fc4b52232a65f6c3162247bfc6698ab3ac34"
+	ghToken := "c8451686f6c89a3073a61649ddb1de55df949cc3"
 	ghUsername := "cyf-gh"
 	gistID := "ef193438e465860af6aea1a3da16f0cf"
 
